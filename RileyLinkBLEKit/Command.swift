@@ -268,11 +268,3 @@ struct ResetRadioConfig: Command {
     }
 }
 
-
-// MARK: - Helpers
-extension Data {
-    fileprivate mutating func appendBigEndian<T: FixedWidthInteger>(_ newElement: T) {
-        var element = newElement.byteSwapped
-        append(UnsafeBufferPointer(start: &element, count: 1))
-    }
-}
